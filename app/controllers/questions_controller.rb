@@ -24,4 +24,25 @@ class QuestionsController < ApplicationController
 
   end
 
+  #lewagon solution
+
+  def ask
+
+  end
+
+  def answer
+    @question = params[:question]
+    if @question.blank?
+      @answer = "I can't hear you"
+    elsif @question =~ /i am going to work/i
+      @answer = " great"
+    elsif @question.ends_with?("?")
+      @answer = " silly question, get dress"
+    else
+      @answer = "I dont care get dress and go to work"
+    end
+
+
+  end
+
 end
